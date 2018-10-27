@@ -43,10 +43,10 @@ RM = /Applications/CLion.app/Contents/bin/cmake/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/Users/oscar/Documents/Escuela/Otoño 2018/Sistemas Operativos/Programas/GestorProcesos"
+CMAKE_SOURCE_DIR = /Users/oscar/Documents/Escuela/Otoño2018/Sistemas_Operativos/Programas/GestorProcesos
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/Users/oscar/Documents/Escuela/Otoño 2018/Sistemas Operativos/Programas/GestorProcesos/cmake-build-debug"
+CMAKE_BINARY_DIR = /Users/oscar/Documents/Escuela/Otoño2018/Sistemas_Operativos/Programas/GestorProcesos/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/GestorProcesos.dir/depend.make
@@ -59,16 +59,16 @@ include CMakeFiles/GestorProcesos.dir/flags.make
 
 CMakeFiles/GestorProcesos.dir/main.cpp.o: CMakeFiles/GestorProcesos.dir/flags.make
 CMakeFiles/GestorProcesos.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/oscar/Documents/Escuela/Otoño 2018/Sistemas Operativos/Programas/GestorProcesos/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/GestorProcesos.dir/main.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/GestorProcesos.dir/main.cpp.o -c "/Users/oscar/Documents/Escuela/Otoño 2018/Sistemas Operativos/Programas/GestorProcesos/main.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/oscar/Documents/Escuela/Otoño2018/Sistemas_Operativos/Programas/GestorProcesos/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/GestorProcesos.dir/main.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/GestorProcesos.dir/main.cpp.o -c /Users/oscar/Documents/Escuela/Otoño2018/Sistemas_Operativos/Programas/GestorProcesos/main.cpp
 
 CMakeFiles/GestorProcesos.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/GestorProcesos.dir/main.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/oscar/Documents/Escuela/Otoño 2018/Sistemas Operativos/Programas/GestorProcesos/main.cpp" > CMakeFiles/GestorProcesos.dir/main.cpp.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/oscar/Documents/Escuela/Otoño2018/Sistemas_Operativos/Programas/GestorProcesos/main.cpp > CMakeFiles/GestorProcesos.dir/main.cpp.i
 
 CMakeFiles/GestorProcesos.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/GestorProcesos.dir/main.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/oscar/Documents/Escuela/Otoño 2018/Sistemas Operativos/Programas/GestorProcesos/main.cpp" -o CMakeFiles/GestorProcesos.dir/main.cpp.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/oscar/Documents/Escuela/Otoño2018/Sistemas_Operativos/Programas/GestorProcesos/main.cpp -o CMakeFiles/GestorProcesos.dir/main.cpp.s
 
 CMakeFiles/GestorProcesos.dir/main.cpp.o.requires:
 
@@ -83,16 +83,16 @@ CMakeFiles/GestorProcesos.dir/main.cpp.o.provides.build: CMakeFiles/GestorProces
 
 CMakeFiles/GestorProcesos.dir/Proceso.cpp.o: CMakeFiles/GestorProcesos.dir/flags.make
 CMakeFiles/GestorProcesos.dir/Proceso.cpp.o: ../Proceso.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/oscar/Documents/Escuela/Otoño 2018/Sistemas Operativos/Programas/GestorProcesos/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/GestorProcesos.dir/Proceso.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/GestorProcesos.dir/Proceso.cpp.o -c "/Users/oscar/Documents/Escuela/Otoño 2018/Sistemas Operativos/Programas/GestorProcesos/Proceso.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/oscar/Documents/Escuela/Otoño2018/Sistemas_Operativos/Programas/GestorProcesos/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/GestorProcesos.dir/Proceso.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/GestorProcesos.dir/Proceso.cpp.o -c /Users/oscar/Documents/Escuela/Otoño2018/Sistemas_Operativos/Programas/GestorProcesos/Proceso.cpp
 
 CMakeFiles/GestorProcesos.dir/Proceso.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/GestorProcesos.dir/Proceso.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/oscar/Documents/Escuela/Otoño 2018/Sistemas Operativos/Programas/GestorProcesos/Proceso.cpp" > CMakeFiles/GestorProcesos.dir/Proceso.cpp.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/oscar/Documents/Escuela/Otoño2018/Sistemas_Operativos/Programas/GestorProcesos/Proceso.cpp > CMakeFiles/GestorProcesos.dir/Proceso.cpp.i
 
 CMakeFiles/GestorProcesos.dir/Proceso.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/GestorProcesos.dir/Proceso.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/oscar/Documents/Escuela/Otoño 2018/Sistemas Operativos/Programas/GestorProcesos/Proceso.cpp" -o CMakeFiles/GestorProcesos.dir/Proceso.cpp.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/oscar/Documents/Escuela/Otoño2018/Sistemas_Operativos/Programas/GestorProcesos/Proceso.cpp -o CMakeFiles/GestorProcesos.dir/Proceso.cpp.s
 
 CMakeFiles/GestorProcesos.dir/Proceso.cpp.o.requires:
 
@@ -107,16 +107,16 @@ CMakeFiles/GestorProcesos.dir/Proceso.cpp.o.provides.build: CMakeFiles/GestorPro
 
 CMakeFiles/GestorProcesos.dir/CanalEjecucion.cpp.o: CMakeFiles/GestorProcesos.dir/flags.make
 CMakeFiles/GestorProcesos.dir/CanalEjecucion.cpp.o: ../CanalEjecucion.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/oscar/Documents/Escuela/Otoño 2018/Sistemas Operativos/Programas/GestorProcesos/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/GestorProcesos.dir/CanalEjecucion.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/GestorProcesos.dir/CanalEjecucion.cpp.o -c "/Users/oscar/Documents/Escuela/Otoño 2018/Sistemas Operativos/Programas/GestorProcesos/CanalEjecucion.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/oscar/Documents/Escuela/Otoño2018/Sistemas_Operativos/Programas/GestorProcesos/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/GestorProcesos.dir/CanalEjecucion.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/GestorProcesos.dir/CanalEjecucion.cpp.o -c /Users/oscar/Documents/Escuela/Otoño2018/Sistemas_Operativos/Programas/GestorProcesos/CanalEjecucion.cpp
 
 CMakeFiles/GestorProcesos.dir/CanalEjecucion.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/GestorProcesos.dir/CanalEjecucion.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/oscar/Documents/Escuela/Otoño 2018/Sistemas Operativos/Programas/GestorProcesos/CanalEjecucion.cpp" > CMakeFiles/GestorProcesos.dir/CanalEjecucion.cpp.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/oscar/Documents/Escuela/Otoño2018/Sistemas_Operativos/Programas/GestorProcesos/CanalEjecucion.cpp > CMakeFiles/GestorProcesos.dir/CanalEjecucion.cpp.i
 
 CMakeFiles/GestorProcesos.dir/CanalEjecucion.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/GestorProcesos.dir/CanalEjecucion.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/oscar/Documents/Escuela/Otoño 2018/Sistemas Operativos/Programas/GestorProcesos/CanalEjecucion.cpp" -o CMakeFiles/GestorProcesos.dir/CanalEjecucion.cpp.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/oscar/Documents/Escuela/Otoño2018/Sistemas_Operativos/Programas/GestorProcesos/CanalEjecucion.cpp -o CMakeFiles/GestorProcesos.dir/CanalEjecucion.cpp.s
 
 CMakeFiles/GestorProcesos.dir/CanalEjecucion.cpp.o.requires:
 
@@ -131,16 +131,16 @@ CMakeFiles/GestorProcesos.dir/CanalEjecucion.cpp.o.provides.build: CMakeFiles/Ge
 
 CMakeFiles/GestorProcesos.dir/FormaProcesamiento.cpp.o: CMakeFiles/GestorProcesos.dir/flags.make
 CMakeFiles/GestorProcesos.dir/FormaProcesamiento.cpp.o: ../FormaProcesamiento.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/oscar/Documents/Escuela/Otoño 2018/Sistemas Operativos/Programas/GestorProcesos/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/GestorProcesos.dir/FormaProcesamiento.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/GestorProcesos.dir/FormaProcesamiento.cpp.o -c "/Users/oscar/Documents/Escuela/Otoño 2018/Sistemas Operativos/Programas/GestorProcesos/FormaProcesamiento.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/oscar/Documents/Escuela/Otoño2018/Sistemas_Operativos/Programas/GestorProcesos/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/GestorProcesos.dir/FormaProcesamiento.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/GestorProcesos.dir/FormaProcesamiento.cpp.o -c /Users/oscar/Documents/Escuela/Otoño2018/Sistemas_Operativos/Programas/GestorProcesos/FormaProcesamiento.cpp
 
 CMakeFiles/GestorProcesos.dir/FormaProcesamiento.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/GestorProcesos.dir/FormaProcesamiento.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/oscar/Documents/Escuela/Otoño 2018/Sistemas Operativos/Programas/GestorProcesos/FormaProcesamiento.cpp" > CMakeFiles/GestorProcesos.dir/FormaProcesamiento.cpp.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/oscar/Documents/Escuela/Otoño2018/Sistemas_Operativos/Programas/GestorProcesos/FormaProcesamiento.cpp > CMakeFiles/GestorProcesos.dir/FormaProcesamiento.cpp.i
 
 CMakeFiles/GestorProcesos.dir/FormaProcesamiento.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/GestorProcesos.dir/FormaProcesamiento.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/oscar/Documents/Escuela/Otoño 2018/Sistemas Operativos/Programas/GestorProcesos/FormaProcesamiento.cpp" -o CMakeFiles/GestorProcesos.dir/FormaProcesamiento.cpp.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/oscar/Documents/Escuela/Otoño2018/Sistemas_Operativos/Programas/GestorProcesos/FormaProcesamiento.cpp -o CMakeFiles/GestorProcesos.dir/FormaProcesamiento.cpp.s
 
 CMakeFiles/GestorProcesos.dir/FormaProcesamiento.cpp.o.requires:
 
@@ -169,7 +169,7 @@ GestorProcesos: CMakeFiles/GestorProcesos.dir/CanalEjecucion.cpp.o
 GestorProcesos: CMakeFiles/GestorProcesos.dir/FormaProcesamiento.cpp.o
 GestorProcesos: CMakeFiles/GestorProcesos.dir/build.make
 GestorProcesos: CMakeFiles/GestorProcesos.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/Users/oscar/Documents/Escuela/Otoño 2018/Sistemas Operativos/Programas/GestorProcesos/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable GestorProcesos"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/oscar/Documents/Escuela/Otoño2018/Sistemas_Operativos/Programas/GestorProcesos/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable GestorProcesos"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/GestorProcesos.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -189,6 +189,6 @@ CMakeFiles/GestorProcesos.dir/clean:
 .PHONY : CMakeFiles/GestorProcesos.dir/clean
 
 CMakeFiles/GestorProcesos.dir/depend:
-	cd "/Users/oscar/Documents/Escuela/Otoño 2018/Sistemas Operativos/Programas/GestorProcesos/cmake-build-debug" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/Users/oscar/Documents/Escuela/Otoño 2018/Sistemas Operativos/Programas/GestorProcesos" "/Users/oscar/Documents/Escuela/Otoño 2018/Sistemas Operativos/Programas/GestorProcesos" "/Users/oscar/Documents/Escuela/Otoño 2018/Sistemas Operativos/Programas/GestorProcesos/cmake-build-debug" "/Users/oscar/Documents/Escuela/Otoño 2018/Sistemas Operativos/Programas/GestorProcesos/cmake-build-debug" "/Users/oscar/Documents/Escuela/Otoño 2018/Sistemas Operativos/Programas/GestorProcesos/cmake-build-debug/CMakeFiles/GestorProcesos.dir/DependInfo.cmake" --color=$(COLOR)
+	cd /Users/oscar/Documents/Escuela/Otoño2018/Sistemas_Operativos/Programas/GestorProcesos/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/oscar/Documents/Escuela/Otoño2018/Sistemas_Operativos/Programas/GestorProcesos /Users/oscar/Documents/Escuela/Otoño2018/Sistemas_Operativos/Programas/GestorProcesos /Users/oscar/Documents/Escuela/Otoño2018/Sistemas_Operativos/Programas/GestorProcesos/cmake-build-debug /Users/oscar/Documents/Escuela/Otoño2018/Sistemas_Operativos/Programas/GestorProcesos/cmake-build-debug /Users/oscar/Documents/Escuela/Otoño2018/Sistemas_Operativos/Programas/GestorProcesos/cmake-build-debug/CMakeFiles/GestorProcesos.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/GestorProcesos.dir/depend
 

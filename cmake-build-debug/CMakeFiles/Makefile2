@@ -54,10 +54,10 @@ RM = /Applications/CLion.app/Contents/bin/cmake/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/Users/oscar/Documents/Escuela/Otoño 2018/Sistemas Operativos/Programas/GestorProcesos"
+CMAKE_SOURCE_DIR = /Users/oscar/Documents/Escuela/Otoño2018/Sistemas_Operativos/Programas/GestorProcesos
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/Users/oscar/Documents/Escuela/Otoño 2018/Sistemas Operativos/Programas/GestorProcesos/cmake-build-debug"
+CMAKE_BINARY_DIR = /Users/oscar/Documents/Escuela/Otoño2018/Sistemas_Operativos/Programas/GestorProcesos/cmake-build-debug
 
 #=============================================================================
 # Target rules for target CMakeFiles/GestorProcesos.dir
@@ -66,7 +66,7 @@ CMAKE_BINARY_DIR = "/Users/oscar/Documents/Escuela/Otoño 2018/Sistemas Operativ
 CMakeFiles/GestorProcesos.dir/all:
 	$(MAKE) -f CMakeFiles/GestorProcesos.dir/build.make CMakeFiles/GestorProcesos.dir/depend
 	$(MAKE) -f CMakeFiles/GestorProcesos.dir/build.make CMakeFiles/GestorProcesos.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/Users/oscar/Documents/Escuela/Otoño 2018/Sistemas Operativos/Programas/GestorProcesos/cmake-build-debug/CMakeFiles" --progress-num=1,2,3,4,5 "Built target GestorProcesos"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/oscar/Documents/Escuela/Otoño2018/Sistemas_Operativos/Programas/GestorProcesos/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4,5 "Built target GestorProcesos"
 .PHONY : CMakeFiles/GestorProcesos.dir/all
 
 # Include target in all.
@@ -76,9 +76,9 @@ all: CMakeFiles/GestorProcesos.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/GestorProcesos.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/oscar/Documents/Escuela/Otoño 2018/Sistemas Operativos/Programas/GestorProcesos/cmake-build-debug/CMakeFiles" 5
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/oscar/Documents/Escuela/Otoño2018/Sistemas_Operativos/Programas/GestorProcesos/cmake-build-debug/CMakeFiles 5
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/GestorProcesos.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/oscar/Documents/Escuela/Otoño 2018/Sistemas Operativos/Programas/GestorProcesos/cmake-build-debug/CMakeFiles" 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/oscar/Documents/Escuela/Otoño2018/Sistemas_Operativos/Programas/GestorProcesos/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/GestorProcesos.dir/rule
 
 # Convenience name for target.

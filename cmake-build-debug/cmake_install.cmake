@@ -1,4 +1,4 @@
-# Install script for directory: /Users/oscar/Documents/Escuela/Otoño 2018/Sistemas Operativos/Programas/GestorProcesos
+# Install script for directory: /Users/oscar/Documents/Escuela/Otoño2018/Sistemas_Operativos/Programas/GestorProcesos
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -40,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/Users/oscar/Documents/Escuela/Otoño 2018/Sistemas Operativos/Programas/GestorProcesos/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/Users/oscar/Documents/Escuela/Otoño2018/Sistemas_Operativos/Programas/GestorProcesos/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

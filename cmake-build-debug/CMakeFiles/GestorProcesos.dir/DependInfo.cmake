@@ -4,10 +4,10 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/Users/oscar/Documents/Escuela/Otoño 2018/Sistemas Operativos/Programas/GestorProcesos/CanalEjecucion.cpp" "/Users/oscar/Documents/Escuela/Otoño 2018/Sistemas Operativos/Programas/GestorProcesos/cmake-build-debug/CMakeFiles/GestorProcesos.dir/CanalEjecucion.cpp.o"
-  "/Users/oscar/Documents/Escuela/Otoño 2018/Sistemas Operativos/Programas/GestorProcesos/FormaProcesamiento.cpp" "/Users/oscar/Documents/Escuela/Otoño 2018/Sistemas Operativos/Programas/GestorProcesos/cmake-build-debug/CMakeFiles/GestorProcesos.dir/FormaProcesamiento.cpp.o"
-  "/Users/oscar/Documents/Escuela/Otoño 2018/Sistemas Operativos/Programas/GestorProcesos/Proceso.cpp" "/Users/oscar/Documents/Escuela/Otoño 2018/Sistemas Operativos/Programas/GestorProcesos/cmake-build-debug/CMakeFiles/GestorProcesos.dir/Proceso.cpp.o"
-  "/Users/oscar/Documents/Escuela/Otoño 2018/Sistemas Operativos/Programas/GestorProcesos/main.cpp" "/Users/oscar/Documents/Escuela/Otoño 2018/Sistemas Operativos/Programas/GestorProcesos/cmake-build-debug/CMakeFiles/GestorProcesos.dir/main.cpp.o"
+  "/Users/oscar/Documents/Escuela/Otoño2018/Sistemas_Operativos/Programas/GestorProcesos/CanalEjecucion.cpp" "/Users/oscar/Documents/Escuela/Otoño2018/Sistemas_Operativos/Programas/GestorProcesos/cmake-build-debug/CMakeFiles/GestorProcesos.dir/CanalEjecucion.cpp.o"
+  "/Users/oscar/Documents/Escuela/Otoño2018/Sistemas_Operativos/Programas/GestorProcesos/FormaProcesamiento.cpp" "/Users/oscar/Documents/Escuela/Otoño2018/Sistemas_Operativos/Programas/GestorProcesos/cmake-build-debug/CMakeFiles/GestorProcesos.dir/FormaProcesamiento.cpp.o"
+  "/Users/oscar/Documents/Escuela/Otoño2018/Sistemas_Operativos/Programas/GestorProcesos/Proceso.cpp" "/Users/oscar/Documents/Escuela/Otoño2018/Sistemas_Operativos/Programas/GestorProcesos/cmake-build-debug/CMakeFiles/GestorProcesos.dir/Proceso.cpp.o"
+  "/Users/oscar/Documents/Escuela/Otoño2018/Sistemas_Operativos/Programas/GestorProcesos/main.cpp" "/Users/oscar/Documents/Escuela/Otoño2018/Sistemas_Operativos/Programas/GestorProcesos/cmake-build-debug/CMakeFiles/GestorProcesos.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "AppleClang")
 
