@@ -3,6 +3,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/GestorProcesos.dir/Proceso.cpp.o"
   "CMakeFiles/GestorProcesos.dir/CanalEjecucion.cpp.o"
   "CMakeFiles/GestorProcesos.dir/FormaProcesamiento.cpp.o"
+  "CMakeFiles/GestorProcesos.dir/GestorRam.cpp.o"
   "GestorProcesos.pdb"
   "GestorProcesos"
 )

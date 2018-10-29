@@ -25,6 +25,14 @@ void Proceso::imprimeBasico() {
          << "Prioridad:" << prioridad << endl << endl;
 }
 
+void Proceso::imprimeConRam() {
+    cout << "T" << pid << endl
+         << "Tiempo de llegada:" << tiempoLlegada << endl
+         << "Tiempo de ejecucion:" << tiempoEjecucion << endl
+         << "Prioridad:" << prioridad << endl
+         << "Ram:" << memoria << endl << endl;
+}
+
 void Proceso::imprimeCompleto() {
     cout << "Pid:" << pid << endl
          << "Tiempo de llegada:" << tiempoLlegada << endl
@@ -38,7 +46,7 @@ void Proceso::imprimeCompleto() {
 list<Proceso> Proceso::getListaProcesosDeArchivo() {
     list<Proceso> listaProcesos;
 
-    ifstream archivoLeeProcesos("/Users/oscar/Documents/Escuela/Otoño 2018/Sistemas Operativos/Programas/GestorProcesos/Procesos.txt");
+    ifstream archivoLeeProcesos("/Users/oscar/Documents/Escuela/Otoño2018/Sistemas_Operativos/Programas/GestorProcesos/Procesos.txt");
 
     if(archivoLeeProcesos.fail()){
         cout << "No se pudo abrir el archivo"<< endl;
@@ -56,6 +64,8 @@ list<Proceso> Proceso::getListaProcesosDeArchivo() {
             getline(archivoLeeProcesos,textoActual);
             procesoActual.prioridad = stoi(textoActual);
             getline(archivoLeeProcesos,textoActual);
+            procesoActual.memoria = stoi(textoActual);
+            getline(archivoLeeProcesos,textoActual);
             listaProcesos.push_back(procesoActual);
         }
         cout << "Se han leido los procesos con exito! :D\n\n";
@@ -72,7 +82,7 @@ void Proceso::reduceTiempoEjecucion() {
     }
 }
 
-bool Proceso::finalizado() {
+bool Proceso::finalizo() {
     return estado == 2;
 }
 
@@ -124,9 +134,9 @@ bool operator < (const Proceso &procesoA, const Proceso &procesoB) {
                 if(pesoPrioridad == "pesado"){
                     if(procesoA.prioridad == procesoB.prioridad) {
                         if(pesoPid == "descendente"){
-                            return  (procesoA.pid < procesoB.pid);
+                            return  (procesoB.pid < procesoA.pid);//Cambio orden
                         } else
-                            return  (procesoB.pid < procesoA.pid);
+                            return  (procesoA.pid < procesoB.pid);
                     }
                     else
                         return  (procesoB.prioridad < procesoA.prioridad);
@@ -134,9 +144,9 @@ bool operator < (const Proceso &procesoA, const Proceso &procesoB) {
                 else{// pesoPrioridad  = ligero
                     if(procesoA.prioridad == procesoB.prioridad) {
                         if(pesoPid == "descendente"){
-                            return  (procesoA.pid < procesoB.pid);
-                        } else
                             return  (procesoB.pid < procesoA.pid);
+                        } else
+                            return  (procesoA.pid < procesoB.pid);
                     }
                     else
                         return procesoA.prioridad < procesoB.prioridad;
@@ -215,3 +225,7 @@ int Proceso::getTiempoEspera() {
 bool operator==(const Proceso &procesoA, const Proceso &procesoB) {
     return procesoA.pid == procesoB.pid;
 }
+int Proceso::getRam() {
+    return memoria;
+}
+

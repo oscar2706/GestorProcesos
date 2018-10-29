@@ -177,6 +177,33 @@ FormaProcesamiento.cpp.s:
 	$(MAKE) -f CMakeFiles/GestorProcesos.dir/build.make CMakeFiles/GestorProcesos.dir/FormaProcesamiento.cpp.s
 .PHONY : FormaProcesamiento.cpp.s
 
+GestorRam.o: GestorRam.cpp.o
+
+.PHONY : GestorRam.o
+
+# target to build an object file
+GestorRam.cpp.o:
+	$(MAKE) -f CMakeFiles/GestorProcesos.dir/build.make CMakeFiles/GestorProcesos.dir/GestorRam.cpp.o
+.PHONY : GestorRam.cpp.o
+
+GestorRam.i: GestorRam.cpp.i
+
+.PHONY : GestorRam.i
+
+# target to preprocess a source file
+GestorRam.cpp.i:
+	$(MAKE) -f CMakeFiles/GestorProcesos.dir/build.make CMakeFiles/GestorProcesos.dir/GestorRam.cpp.i
+.PHONY : GestorRam.cpp.i
+
+GestorRam.s: GestorRam.cpp.s
+
+.PHONY : GestorRam.s
+
+# target to generate assembly for a file
+GestorRam.cpp.s:
+	$(MAKE) -f CMakeFiles/GestorProcesos.dir/build.make CMakeFiles/GestorProcesos.dir/GestorRam.cpp.s
+.PHONY : GestorRam.cpp.s
+
 Proceso.o: Proceso.cpp.o
 
 .PHONY : Proceso.o
@@ -246,6 +273,9 @@ help:
 	@echo "... FormaProcesamiento.o"
 	@echo "... FormaProcesamiento.i"
 	@echo "... FormaProcesamiento.s"
+	@echo "... GestorRam.o"
+	@echo "... GestorRam.i"
+	@echo "... GestorRam.s"
 	@echo "... Proceso.o"
 	@echo "... Proceso.i"
 	@echo "... Proceso.s"

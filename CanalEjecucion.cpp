@@ -8,26 +8,34 @@ using namespace std;
 
 int CanalEjecucion::asignaProceso(list<Proceso> ListaProcesosPendientes, int tiempoInicioEjecucion) {
     this->setOcupado(true);
-    cout << "--- Canal " << id << "---\n";
+    cout << "--- Canal " << id+1 << "---\n";
     cout << "INGRESA PROCESO\n";
     list<Proceso>::iterator itrProceso;
     itrProceso = ListaProcesosPendientes.begin();
 
     procesoEnEjecucion = *itrProceso;
     procesoEnEjecucion.setTiempoEspera(tiempoInicioEjecucion - procesoEnEjecucion.getTiempoLlegada());
-    procesoEnEjecucion.imprimeBasico();
+    procesoEnEjecucion.imprimeConRam();
     return procesoEnEjecucion.getTiempoEspera();
 }
 
 void CanalEjecucion::ejecutaProceso() {
     procesoEnEjecucion.reduceTiempoEjecucion();
     if(procesoEnEjecucion.getTiempoEjecucion() ==0 ){
-        procesoEnEjecucion.setEstado(2);//Se marca como finalizado
+        procesoEnEjecucion.setEstado(2);//Se marca como finalizo
         this->liberaCanal();
     }
 }
 
+void CanalEjecucion::ejecutaProcesoSinLiberar() {
+    procesoEnEjecucion.reduceTiempoEjecucion();
+    if(procesoEnEjecucion.getTiempoEjecucion() ==0 ){
+        procesoEnEjecucion.setEstado(2);//Se marca como finalizo
+    }
+}
+
 void CanalEjecucion::liberaCanal() {
+    procesoEnEjecucion = Proceso();
     ocupado = false;
 }
 
@@ -61,6 +69,6 @@ Proceso CanalEjecucion::regresaProceso() {
 }
 
 bool CanalEjecucion::terminoEjecutarProceso() {
-    return procesoEnEjecucion.finalizado();
+    return procesoEnEjecucion.finalizo();
 }
 

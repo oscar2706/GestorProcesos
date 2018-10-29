@@ -14,7 +14,7 @@ private:
     int id;
     Proceso procesoEnEjecucion;
     int tiempoEjecucionRestante;
-    bool ocupado; //0=libre 1=ocupado
+    bool ocupado;
 public:
     CanalEjecucion() {
         ocupado = false;
@@ -22,6 +22,7 @@ public:
     void setId(int _id);
     int asignaProceso(list<Proceso> ListaProcesosPendientes, int tiempoInicioEjecucion);//Regresa el tiempo de espera
     void ejecutaProceso();
+    void ejecutaProcesoSinLiberar();
     bool enUso();
     void setOcupado(bool estado);
     void liberaCanal();

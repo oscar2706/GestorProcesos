@@ -6,6 +6,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_CXX
   "/Users/oscar/Documents/Escuela/Otoño2018/Sistemas_Operativos/Programas/GestorProcesos/CanalEjecucion.cpp" "/Users/oscar/Documents/Escuela/Otoño2018/Sistemas_Operativos/Programas/GestorProcesos/cmake-build-debug/CMakeFiles/GestorProcesos.dir/CanalEjecucion.cpp.o"
   "/Users/oscar/Documents/Escuela/Otoño2018/Sistemas_Operativos/Programas/GestorProcesos/FormaProcesamiento.cpp" "/Users/oscar/Documents/Escuela/Otoño2018/Sistemas_Operativos/Programas/GestorProcesos/cmake-build-debug/CMakeFiles/GestorProcesos.dir/FormaProcesamiento.cpp.o"
+  "/Users/oscar/Documents/Escuela/Otoño2018/Sistemas_Operativos/Programas/GestorProcesos/GestorRam.cpp" "/Users/oscar/Documents/Escuela/Otoño2018/Sistemas_Operativos/Programas/GestorProcesos/cmake-build-debug/CMakeFiles/GestorProcesos.dir/GestorRam.cpp.o"
   "/Users/oscar/Documents/Escuela/Otoño2018/Sistemas_Operativos/Programas/GestorProcesos/Proceso.cpp" "/Users/oscar/Documents/Escuela/Otoño2018/Sistemas_Operativos/Programas/GestorProcesos/cmake-build-debug/CMakeFiles/GestorProcesos.dir/Proceso.cpp.o"
   "/Users/oscar/Documents/Escuela/Otoño2018/Sistemas_Operativos/Programas/GestorProcesos/main.cpp" "/Users/oscar/Documents/Escuela/Otoño2018/Sistemas_Operativos/Programas/GestorProcesos/cmake-build-debug/CMakeFiles/GestorProcesos.dir/main.cpp.o"
   )

@@ -94,6 +94,12 @@
 		<Unit filename="/Users/oscar/Documents/Escuela/Otoño2018/Sistemas_Operativos/Programas/GestorProcesos/FormaProcesamiento.h">
 			<Option target="GestorProcesos"/>
 		</Unit>
+		<Unit filename="/Users/oscar/Documents/Escuela/Otoño2018/Sistemas_Operativos/Programas/GestorProcesos/GestorRam.cpp">
+			<Option target="GestorProcesos"/>
+		</Unit>
+		<Unit filename="/Users/oscar/Documents/Escuela/Otoño2018/Sistemas_Operativos/Programas/GestorProcesos/GestorRam.h">
+			<Option target="GestorProcesos"/>
+		</Unit>
 		<Unit filename="/Users/oscar/Documents/Escuela/Otoño2018/Sistemas_Operativos/Programas/GestorProcesos/Proceso.cpp">
 			<Option target="GestorProcesos"/>
 		</Unit>

@@ -11,7 +11,6 @@ using namespace std;
 
 class FormaProcesamiento {
 private:
-
     int posicionTiempoEjecucion;
     int posicionPrioridad;
     int posicionPid;

@@ -19,19 +19,27 @@ private:
     //int tiempoFinalizacion;
     int tiempoEspera;
     int prioridad;
-    int estado;//0 en espera, 1 en ejecucion 2 finalizado
+    int estado;//0 en espera, 1 en ejecucion 2 finalizo
+    int memoria;
 public:
     Proceso() {
+        pid = 0;
+        tiempoLlegada = 0;
+        tiempoEjecucion = 0;
+        prioridad = 0;
         estado = 0;
+        memoria = 0;
         tiempoEspera=0;
     }
     int getPid();
+    int getRam();
     int getTiempoLlegada();
     int getTiempoEspera();
     int getTiempoEjecucion();
-    bool finalizado();
+    bool finalizo();
     void reduceTiempoEjecucion();
     void imprimeBasico();
+    void imprimeConRam();
     void imprimeCompleto();
     void setTiempoEspera(int tiempoEspera);
     void setEstado(int estado);
