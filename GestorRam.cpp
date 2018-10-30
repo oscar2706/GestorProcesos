@@ -40,15 +40,15 @@ bool GestorRam::encolarProceso(int pidProceso, int memoriaSolicitada) {
         }
     }
 
+    if(posicionInsercion != -1 && Memoria.at(posicionInsercion) != 0)
+        compactar();
+
     if(posicionInsercion != -1){
         for (int j = posicionInsercion; j <posicionInsercion+memoriaSolicitada ; ++j) {
             Memoria.at(j) = pidProceso;
         }
         procesoEncolado = true;
     }
-
-    if(!procesoEncolado && cabeEnMemoria(memoriaSolicitada) && !yaEstaEnRam(pidProceso))
-        compactar();
 
     return procesoEncolado;
 }
@@ -101,8 +101,8 @@ void GestorRam::compactar() {
     }
      */
 
-    cout << "\n\n****************************\n";
-    cout << "Memoria compactada" << endl;
+    cout << "****************************\n";
+    cout << " Se compacta la Memoria " << endl;
     for (itr = Memoria.begin();  itr != Memoria.end(); itr++) {
         if(*itr == 0)
             cout << "    |";

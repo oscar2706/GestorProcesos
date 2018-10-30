@@ -241,6 +241,7 @@ void ejecutaMultitarea(){
                 list<Proceso> ProcesosPendientes;
                 list<Proceso> ProcesosEjecutandose;
                 list<Proceso> ProcesosFinalizados;
+                list<Proceso> ProcesosQueNoCaben;
                 list<Proceso> ProcesosRam; //Lista que contiene los procesos que estan en RAM
                 list<Proceso> ProcesosHDD;
 
@@ -251,18 +252,20 @@ void ejecutaMultitarea(){
 
                 auto cantidadProcesos = ListaProcesos.size();
                 auto cantidadProcesosFinalizados = ProcesosFinalizados.size();
-
+                //cantidadProcesosFinalizados != cantidadProcesos
                 while(cantidadProcesosFinalizados != cantidadProcesos){
                     cout << "=================================================="<< endl;
                     cout << "                    > Paso " << pasoProcesamiento << " <" << endl;
                     cout << "=================================================="<< endl << endl;
 
-                    if(pasoProcesamiento == 3){
-
-                    }
-
                     //Vacia la ram y el hdd si ya no hay procesos pendientes
                     if(ProcesosPendientes.empty() && !ProcesosRam.empty()){
+                        //Agrega elementos que no pudieron ser ejecutados en el paso anterior
+                        if(!ProcesosQueNoCaben.empty()){
+                            ProcesosQueNoCaben.sort();
+                            ProcesosPendientes.merge(ProcesosQueNoCaben);
+                        }
+
                         list <Proceso>::iterator itrProceso2;
                         cout << "=======> Se vacia la ram y el disco duro! <=======" << endl;
                         cout << "-> Memoria Ram = ";
@@ -378,15 +381,14 @@ void ejecutaMultitarea(){
                                     ProcesosPendientes.pop_front();
                                     --cantidadProcesos;
                                 } else{
-                                    /*
-                                    if(ramPantalla.cabeEnMemoria(itrCanal->regresaProceso().getRam())){
-                                    }
-                                     */
+
                                     bool procesoIngresadoEnRam = false;
+                                    bool sePuedeInsertar = true;
+                                    ProcesosPendientes.pop_front();
                                     do {
                                         cout << "--> Memoria Ram = ";
                                         ramPantalla.imprime();
-                                        cout << "¡No hay espacio para T" << ProcesosPendientes.begin()->getPid() << " en ram! :C" << endl;
+                                        cout << "¡No hay espacio para T" << itrCanal->regresaProceso().getPid() << " en ram! :C" << endl;
                                         cout << "\tSe pasa proceso: T" << ProcesosRam.back().getPid() << " a HDD" << endl;
                                         ramPantalla.quitaProceso(ProcesosRam.back().getPid());
                                         cout << "--> Memoria Ram = ";
@@ -399,8 +401,8 @@ void ejecutaMultitarea(){
                                         }
                                         cout << endl << endl;
 
-                                        int pidProceso = ProcesosPendientes.begin()->getPid();
-                                        int ramProceso = ProcesosPendientes.begin()->getRam();
+                                        int pidProceso = itrCanal->regresaProceso().getPid();
+                                        int ramProceso = itrCanal->regresaProceso().getRam();
                                         //ramPantalla.compactar();
                                         procesoIngresadoEnRam = ramPantalla.encolarProceso(pidProceso,ramProceso);
                                         if(procesoIngresadoEnRam){
@@ -422,10 +424,8 @@ void ejecutaMultitarea(){
                                                 itrCanal->ejecutaProcesoSinLiberar();
                                                 ProcesosEjecutandose.push_back(itrCanal->regresaProceso());
                                             }
-
-                                            ProcesosPendientes.pop_front();
                                         }
-                                    }while(!procesoIngresadoEnRam);
+                                    }while(!procesoIngresadoEnRam && sePuedeInsertar);
 
                                 }
                             }
