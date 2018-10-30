@@ -259,13 +259,9 @@ void ejecutaMultitarea(){
                     cout << "=================================================="<< endl << endl;
 
                     //Vacia la ram y el hdd si ya no hay procesos pendientes
-                    if(ProcesosPendientes.empty() && !ProcesosRam.empty()){
-                        //Agrega elementos que no pudieron ser ejecutados en el paso anterior
-                        if(!ProcesosQueNoCaben.empty()){
-                            ProcesosQueNoCaben.sort();
-                            ProcesosPendientes.merge(ProcesosQueNoCaben);
-                        }
 
+
+                    if(ProcesosPendientes.empty() && !ProcesosRam.empty() && ProcesosQueNoCaben.empty()){
                         list <Proceso>::iterator itrProceso2;
                         cout << "=======> Se vacia la ram y el disco duro! <=======" << endl;
                         cout << "-> Memoria Ram = ";
@@ -314,10 +310,28 @@ void ejecutaMultitarea(){
                         }
                         cout << endl << endl;
                     }
+
+                    //Agrega elementos que no pudieron ser ejecutados en el paso anterior
+                    if(!ProcesosQueNoCaben.empty()){
+                        ProcesosQueNoCaben.sort();
+                        list<Proceso> ProcesosQueNoCabenOriginales;
+                        list <Proceso>::iterator itrProceso2;
+                        for (itrProceso = ProcesosQueNoCaben.begin(); itrProceso != ProcesosQueNoCaben.end(); itrProceso++){
+                            for (itrProceso2 = ListaProcesos.begin(); itrProceso2 != ListaProcesos.end(); itrProceso2++){
+                                if(itrProceso->getPid() == itrProceso2->getPid())
+                                    ProcesosQueNoCabenOriginales.push_back(*itrProceso2);
+                            }
+                        }
+                        ProcesosQueNoCabenOriginales.sort();
+                        ProcesosPendientes.merge(ProcesosQueNoCabenOriginales);
+                    }
+
+                    int cantidadProcesosRestantes = 0; //cantidad de procesos nuevos ingresados en el paso de ejecucion actual
                     //Ingresa procesos en tiempo de llegada conforme al paso actual de ejecucion
                     for (itrProceso = ListaProcesos.begin(); itrProceso != ListaProcesos.end(); itrProceso++)  {
-                        if(itrProceso->getTiempoLlegada() == pasoProcesamiento)
+                        if(itrProceso->getTiempoLlegada() == pasoProcesamiento){
                             ProcesosPendientes.push_back(*itrProceso);
+                        }
                     }
 
                     ProcesosPendientes.sort();
@@ -329,7 +343,6 @@ void ejecutaMultitarea(){
                     for(itrCanal = ListaCanales.begin(); itrCanal != ListaCanales.end(); itrCanal++){
                         itrCanal->asignaProceso(ProcesosPendientes, pasoProcesamiento);
                         //itrCanal->ejecutaProcesoSinLiberar();
-
                         if(itrCanal->enUso()){
                             if(ramPantalla.cabeEnMemoria(itrCanal->regresaProceso().getRam()) || ramPantalla.yaEstaEnRam(ProcesosPendientes.begin()->getPid()) ){
                                 //ramPantalla.compactar();
@@ -338,7 +351,6 @@ void ejecutaMultitarea(){
                                     ramPantalla.imprime();
                                     cout << endl;
                                     ProcesosPendientes.pop_front();
-
                                     bool enListaEjecutandose = false;
                                     for (itrProceso = ProcesosEjecutandose.begin(); itrProceso != ProcesosEjecutandose.end(); itrProceso++){
                                         if(itrProceso->getPid() == itrCanal->regresaProceso().getPid()){
@@ -350,6 +362,7 @@ void ejecutaMultitarea(){
                                         }
                                     }
                                     if(!enListaEjecutandose) {
+
                                         itrCanal->ejecutaProcesoSinLiberar();
                                         ProcesosEjecutandose.push_back(itrCanal->regresaProceso());
                                     }
@@ -386,6 +399,35 @@ void ejecutaMultitarea(){
                                     bool sePuedeInsertar = true;
                                     ProcesosPendientes.pop_front();
                                     do {
+                                        /*
+                                        if(cantidadProcesosRestantes == 0  && !ramPantalla.cabeEnMemoria(itrCanal->regresaProceso().getRam())){
+                                            ProcesosQueNoCaben.push_back(itrCanal->regresaProceso());
+                                            itrCanal->liberaCanal();
+                                            cout << "\n=====> El proceso se ejecutará en el siguiente paso! <=====\n\n";
+                                            sePuedeInsertar = false;
+                                            break;
+                                        }
+                                        */
+                                        if(ProcesosRam.back().getPid() == 0){
+                                            cout << "==> Se pasa el proceso T" << itrCanal->regresaProceso().getPid() << " al siguiente paso <==" << endl;
+                                            bool enListaEjecutandose = false;
+                                            for (itrProceso = ProcesosEjecutandose.begin(); itrProceso != ProcesosEjecutandose.end(); itrProceso++){
+                                                if(itrProceso->getPid() == itrCanal->regresaProceso().getPid()){
+                                                    itrCanal->liberaCanal();
+                                                    itrCanal->asignaProceso(*itrProceso);
+                                                    ProcesosQueNoCaben.push_back(itrCanal->regresaProceso());
+                                                    itrCanal->ejecutaProcesoSinLiberar();
+                                                    *itrProceso = itrCanal->regresaProceso();
+                                                    enListaEjecutandose = true;
+                                                }
+                                            }
+                                            if(!enListaEjecutandose) {
+                                                ProcesosQueNoCaben.push_back(itrCanal->regresaProceso());
+                                                itrCanal->ejecutaProcesoSinLiberar();
+                                                ProcesosEjecutandose.push_back(itrCanal->regresaProceso());
+                                            }
+                                            break;
+                                        }
                                         cout << "--> Memoria Ram = ";
                                         ramPantalla.imprime();
                                         cout << "¡No hay espacio para T" << itrCanal->regresaProceso().getPid() << " en ram! :C" << endl;
@@ -411,6 +453,12 @@ void ejecutaMultitarea(){
                                             cout << endl;
 
                                             bool enListaEjecutandose = false;
+
+                                     //AQUI
+                                            if(pasoProcesamiento == 4 && itrCanal->regresaProceso().getPid()==3){
+
+                                            }
+
                                             for (itrProceso = ProcesosEjecutandose.begin(); itrProceso != ProcesosEjecutandose.end(); itrProceso++){
                                                 if(itrProceso->getPid() == itrCanal->regresaProceso().getPid()){
                                                     itrCanal->liberaCanal();
@@ -418,6 +466,25 @@ void ejecutaMultitarea(){
                                                     itrCanal->ejecutaProcesoSinLiberar();
                                                     *itrProceso = itrCanal->regresaProceso();
                                                     enListaEjecutandose = true;
+
+                                                    if(itrCanal->regresaProceso().finalizo()){
+                                                        ProcesosQueNoCaben.clear();
+                                                        procesosTerminados++;
+                                                        int tiempoEjecucion = itrCanal->regresaProceso().getTiempoEjecucion();
+                                                        int tiempoLlegada = itrCanal->regresaProceso().getTiempoLlegada();
+                                                        int tiempoEspera = pasoProcesamiento - tiempoEjecucion - tiempoLlegada;
+
+                                                        itrCanal->regresaProceso().setTiempoEspera(tiempoEspera);
+                                                        cout << "\t-----> ¡T"<< itrCanal->regresaProceso().getPid() << " SE MURIO! D: <-----" << endl << endl;
+
+                                                        ProcesosFinalizados.push_back(itrCanal->regresaProceso());
+                                                        ++cantidadProcesosFinalizados;
+                                                        itrCanal->liberaCanal();
+                                                        //ProcesosPendientes.pop_front();
+                                                        tiempoEsperaTotal += tiempoEspera;
+                                                    }
+
+                                                    break;
                                                 }
                                             }
                                             if(!enListaEjecutandose) {
@@ -475,10 +542,12 @@ void ejecutaMultitarea(){
                     pasoProcesamiento++;
                 }
 
+                /*
                 cout << "\n\n*********************************************"<< endl;
                 for (itrProceso = ProcesosFinalizados.begin(); itrProceso != ProcesosFinalizados.end(); itrProceso++)
                     itrProceso->imprimeCompleto();
                 cout << "*********************************************\n\n";
+                 */
 
             }break;
 

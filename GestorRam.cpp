@@ -25,6 +25,10 @@ bool GestorRam::encolarProceso(int pidProceso, int memoriaSolicitada) {
     }
      */
 
+    if(cabeEnMemoria(memoriaSolicitada) && tieneHuecos()){
+        compactar();
+    }
+
     bool procesoEncolado = false;
     list<string>::iterator itrRam;
 
