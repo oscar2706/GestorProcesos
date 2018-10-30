@@ -39,6 +39,7 @@ void Proceso::imprimeCompleto() {
          << "Tiempo de ejecucion:" << tiempoEjecucion << endl
          << "Prioridad:" << prioridad << endl
          << "Tiempo espera:" << tiempoEspera << endl
+         << "Ram:" << memoria << endl
          //<< "Tiempo finalizacion:" << tiempoFinalizacion << endl
          << "Estado:" << estado << endl << endl;
 }

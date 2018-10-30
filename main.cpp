@@ -248,7 +248,10 @@ void ejecutaMultitarea(){
                 int pasoProcesamiento=0;
                 float tiempoEsperaTotal = 0;
 
-                while(pasoProcesamiento <= 11){
+                auto cantidadProcesos = ListaProcesos.size();
+                auto cantidadProcesosFinalizados = ProcesosFinalizados.size();
+
+                while(cantidadProcesosFinalizados != cantidadProcesos){
                     cout << "=================================================="<< endl;
                     cout << "                    > Paso " << pasoProcesamiento << " <" << endl;
                     cout << "=================================================="<< endl << endl;
@@ -342,6 +345,7 @@ void ejecutaMultitarea(){
                                         cout << "\t-----> ¡T"<< itrCanal->regresaProceso().getPid() << " SE MURIO! D: <-----" << endl << endl;
 
                                         ProcesosFinalizados.push_back(itrCanal->regresaProceso());
+                                        ++cantidadProcesosFinalizados;
                                         itrCanal->liberaCanal();
                                         //ProcesosPendientes.pop_front();
                                         tiempoEsperaTotal += tiempoEspera;
@@ -355,6 +359,7 @@ void ejecutaMultitarea(){
                                     cout << " no se podra ejecutar! falta memoria ram :C, YA COMPRA MÁS 77" << endl;
                                     cout << "-----> T"<< ProcesosPendientes.begin()->getPid() << " ELIMINADO >:v" << endl << endl;
                                     ProcesosPendientes.pop_front();
+                                    --cantidadProcesos;
                                 } else{
 
                                     bool procesoIngresadoEnRam = false;
@@ -448,6 +453,11 @@ void ejecutaMultitarea(){
                     cout << endl << endl;
                     pasoProcesamiento++;
                 }
+
+                cout << "\n\n*********************************************"<< endl;
+                for (itrProceso = ProcesosFinalizados.begin(); itrProceso != ProcesosFinalizados.end(); itrProceso++)
+                    itrProceso->imprimeCompleto();
+                cout << "*********************************************\n\n";
 
             }break;
 

@@ -17,7 +17,7 @@ int CanalEjecucion::asignaProceso(list<Proceso> ListaProcesosPendientes, int tie
         Proceso procesoVacio;
         procesoEnEjecucion =  procesoVacio;
         cout << "--- Canal " << id+1 << "---\n";
-        cout << "NO HACE NADA :v (por flojo)\n";
+        cout << "NO HACE NADA :v (por flojo)\n\n";
     } else{
         cout << "--- Canal " << id+1 << "---\n";
         cout << "INGRESA PROCESO\n";
