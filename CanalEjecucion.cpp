@@ -7,16 +7,28 @@
 using namespace std;
 
 int CanalEjecucion::asignaProceso(list<Proceso> ListaProcesosPendientes, int tiempoInicioEjecucion) {
-    this->setOcupado(true);
-    cout << "--- Canal " << id+1 << "---\n";
-    cout << "INGRESA PROCESO\n";
     list<Proceso>::iterator itrProceso;
     itrProceso = ListaProcesosPendientes.begin();
-
     procesoEnEjecucion = *itrProceso;
     procesoEnEjecucion.setTiempoEspera(tiempoInicioEjecucion - procesoEnEjecucion.getTiempoLlegada());
-    procesoEnEjecucion.imprimeConRam();
+    this->setOcupado(true);
+
+    if(procesoEnEjecucion.getPid() == 0){
+        Proceso procesoVacio;
+        procesoEnEjecucion =  procesoVacio;
+        cout << "--- Canal " << id+1 << "---\n";
+        cout << "NO HACE NADA :v (por flojo)\n";
+    } else{
+        cout << "--- Canal " << id+1 << "---\n";
+        cout << "INGRESA PROCESO\n";
+
+        procesoEnEjecucion.imprimeConRam();
+    }
     return procesoEnEjecucion.getTiempoEspera();
+}
+
+void CanalEjecucion::asignaProceso(Proceso procesoAsignado) {
+    procesoEnEjecucion = procesoAsignado;
 }
 
 void CanalEjecucion::ejecutaProceso() {

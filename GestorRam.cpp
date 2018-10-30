@@ -78,23 +78,23 @@ void GestorRam::compactar() {
     }
 }
 
-bool GestorRam::quitaProceso(int procesoAQuitar) {
+bool GestorRam::quitaProceso(int pidProcesoAQuitar) {
     bool procesoEliminado = true;
     bool procesoEncontrado = false;
     std::vector<int>::iterator itr;
     for (unsigned i=0; i<Memoria.size(); i++){
-        if(Memoria.at(i) == procesoAQuitar){
+        if(Memoria.at(i) == pidProcesoAQuitar){
             Memoria.at(i) = 0;
             procesoEncontrado = true;
         }
     }
 
     if (!procesoEncontrado){
-        cout << "El proceso T" << procesoAQuitar << ": No esta en memoria! D:" << endl;
+        cout << "El proceso T" << pidProcesoAQuitar << ": No esta en memoria! D:" << endl;
     }
 
     for (unsigned i=0; i<Memoria.size(); i++){
-        if(Memoria.at(i) == procesoAQuitar){
+        if(Memoria.at(i) == pidProcesoAQuitar){
              procesoEliminado = false;
         }
     }
@@ -164,5 +164,16 @@ bool GestorRam::vacia() {
 
 int GestorRam::size() {
     return tamaño;
+}
+
+bool GestorRam::yaEstaEnRam(int pidProceso) {
+    bool enMemoria = false;
+    for (unsigned i=0; i<Memoria.size(); i++){
+        if(Memoria.at(i) == pidProceso){
+            enMemoria = true;
+            break;
+        }
+    }
+    return enMemoria;
 }
 

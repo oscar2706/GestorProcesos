@@ -18,7 +18,8 @@ public:
     bool encolarProceso(int proceso, int memoriaSolicitada);
     int memoriaDisponible();
     bool cabeEnMemoria(int memoriaSolicitada);
-    bool quitaProceso(int procesoAQuitar);
+    bool quitaProceso(int pidProcesoAQuitar);
+    bool yaEstaEnRam(int pidProceso);
     void compactar();
     void setTamaño(int _tamaño);
     void imprime();

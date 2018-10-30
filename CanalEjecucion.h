@@ -21,6 +21,7 @@ public:
     }
     void setId(int _id);
     int asignaProceso(list<Proceso> ListaProcesosPendientes, int tiempoInicioEjecucion);//Regresa el tiempo de espera
+    void asignaProceso(Proceso procesoAsignado);
     void ejecutaProceso();
     void ejecutaProcesoSinLiberar();
     bool enUso();
