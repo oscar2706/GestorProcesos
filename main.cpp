@@ -244,6 +244,7 @@ void ejecutaMultitarea(){
                 list<Proceso> ProcesosRam; //Lista que contiene los procesos que estan en RAM
                 list<Proceso> ProcesosHDD;
 
+
                 ProcesosPendientes.clear();
                 int pasoProcesamiento=0;
                 float tiempoEsperaTotal = 0;
@@ -256,43 +257,58 @@ void ejecutaMultitarea(){
                     cout << "                    > Paso " << pasoProcesamiento << " <" << endl;
                     cout << "=================================================="<< endl << endl;
 
+                    if(pasoProcesamiento == 3){
+
+                    }
+
                     //Vacia la ram y el hdd si ya no hay procesos pendientes
                     if(ProcesosPendientes.empty() && !ProcesosRam.empty()){
                         list <Proceso>::iterator itrProceso2;
+                        cout << "=======> Se vacia la ram y el disco duro! <=======" << endl;
+                        cout << "-> Memoria Ram = ";
+                        ramPantalla.imprime();
+                        cout << "->HDD = ";
+                        for (itrProceso = ProcesosHDD.begin(); itrProceso != ProcesosHDD.end(); itrProceso++){
+                            cout << "T" << itrProceso->getPid() << ", ";
+                        }
+                        cout << endl;
 
-                        cout << "--- Se vacia la ram y el disco duro! ---" << endl;
                         ProcesosRam.sort();
+                        ProcesosHDD.sort();
                         list<Proceso> ProcesosRamOriginales;
-
-                        cout << "----------> Ram <----------"<< endl;
+                        //cout << "----------> Ram <----------"<< endl;
                         for (itrProceso = ProcesosRam.begin(); itrProceso != ProcesosRam.end(); itrProceso++){
-                            itrProceso->imprimeConRam();
+                            //itrProceso->imprimeConRam();
                             for (itrProceso2 = ListaProcesos.begin(); itrProceso2 != ListaProcesos.end(); itrProceso2++){
-                                if(itrProceso->getPid() == itrProceso2->getPid())
+                                if(itrProceso->getPid() == itrProceso2->getPid()) {
                                     ProcesosRamOriginales.push_back(*itrProceso2);
+                                }
                             }
                         }
-                        cout << "---------------------------"<< endl;
-
-                        cout << "----------> HDD <----------"<< endl;
-                        ProcesosHDD.sort();
+                        //cout << "---------------------------"<< endl;
+                        //cout << "----------> HDD <----------"<< endl;
                         list<Proceso> ProcesosHDDOriginales;
                         for (itrProceso = ProcesosHDD.begin(); itrProceso != ProcesosHDD.end(); itrProceso++){
-                            itrProceso->imprimeConRam();
+                            //itrProceso->imprimeConRam();
                             for (itrProceso2 = ListaProcesos.begin(); itrProceso2 != ListaProcesos.end(); itrProceso2++){
                                 if(itrProceso->getPid() == itrProceso2->getPid())
                                     ProcesosHDDOriginales.push_back(*itrProceso2);
                             }
                         }
-                        cout << "---------------------------"<< endl;
+                        //cout << "---------------------------"<< endl;
 
                         ProcesosPendientes.merge(ProcesosRamOriginales);
                         ProcesosPendientes.merge(ProcesosHDDOriginales);
                         ProcesosRam.clear();
                         ProcesosHDD.clear();
                         ramPantalla.vaciar();
-                        cout << "--> Memoria Ram = ";
+
+                        cout << "-> Memoria Ram = ";
                         ramPantalla.imprime();
+                        cout << "-> HDD = ";
+                        for (itrProceso = ProcesosHDD.begin(); itrProceso != ProcesosHDD.end(); itrProceso++){
+                            cout << "T" << itrProceso->getPid() << ", ";
+                        }
                         cout << endl << endl;
                     }
                     //Ingresa procesos en tiempo de llegada conforme al paso actual de ejecucion
@@ -313,6 +329,7 @@ void ejecutaMultitarea(){
 
                         if(itrCanal->enUso()){
                             if(ramPantalla.cabeEnMemoria(itrCanal->regresaProceso().getRam()) || ramPantalla.yaEstaEnRam(ProcesosPendientes.begin()->getPid()) ){
+                                //ramPantalla.compactar();
                                 if(ramPantalla.encolarProceso(ProcesosPendientes.begin()->getPid(),ProcesosPendientes.begin()->getRam())){
                                     cout << "--> Memoria Ram = ";
                                     ramPantalla.imprime();
@@ -361,7 +378,10 @@ void ejecutaMultitarea(){
                                     ProcesosPendientes.pop_front();
                                     --cantidadProcesos;
                                 } else{
-
+                                    /*
+                                    if(ramPantalla.cabeEnMemoria(itrCanal->regresaProceso().getRam())){
+                                    }
+                                     */
                                     bool procesoIngresadoEnRam = false;
                                     do {
                                         cout << "--> Memoria Ram = ";
@@ -381,6 +401,7 @@ void ejecutaMultitarea(){
 
                                         int pidProceso = ProcesosPendientes.begin()->getPid();
                                         int ramProceso = ProcesosPendientes.begin()->getRam();
+                                        //ramPantalla.compactar();
                                         procesoIngresadoEnRam = ramPantalla.encolarProceso(pidProceso,ramProceso);
                                         if(procesoIngresadoEnRam){
                                             cout << "--> Memoria Ram = ";

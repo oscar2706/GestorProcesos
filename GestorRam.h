@@ -15,11 +15,12 @@ private:
     vector<int> Memoria;
 public:
     GestorRam();
-    bool encolarProceso(int proceso, int memoriaSolicitada);
+    bool encolarProceso(int pidProceso, int memoriaSolicitada);
     int memoriaDisponible();
     bool cabeEnMemoria(int memoriaSolicitada);
     bool quitaProceso(int pidProcesoAQuitar);
     bool yaEstaEnRam(int pidProceso);
+    bool tieneHuecos();
     void compactar();
     void setTamaño(int _tamaño);
     void imprime();

@@ -18,7 +18,13 @@ void GestorRam::setTamaño(int _tamaño) {
     }
 }
 
-bool GestorRam::encolarProceso(int proceso, int memoriaSolicitada) {
+bool GestorRam::encolarProceso(int pidProceso, int memoriaSolicitada) {
+    /*
+    if(tieneHuecos()){
+        compactar();
+    }
+     */
+
     bool procesoEncolado = false;
     list<string>::iterator itrRam;
 
@@ -33,17 +39,17 @@ bool GestorRam::encolarProceso(int proceso, int memoriaSolicitada) {
             break;
         }
     }
-    //cout << "Posicion de insercion: " << posicionInsercion << endl;
 
     if(posicionInsercion != -1){
-        //string nombreProceso = "T";
-        //nombreProceso += std::to_string(proceso);
-        //string nombreProceso = std::to_string(proceso);
         for (int j = posicionInsercion; j <posicionInsercion+memoriaSolicitada ; ++j) {
-            Memoria.at(j) = proceso;
+            Memoria.at(j) = pidProceso;
         }
         procesoEncolado = true;
     }
+
+    if(!procesoEncolado && cabeEnMemoria(memoriaSolicitada) && !yaEstaEnRam(pidProceso))
+        compactar();
+
     return procesoEncolado;
 }
 
@@ -67,15 +73,43 @@ bool GestorRam::cabeEnMemoria(int memoriaSolicitada) {
 void GestorRam::compactar() {
 
     std::vector<int>::iterator itr;
+
+    int cantidadEliminados = 0;
+    for (int i = 0; i <Memoria.size() ; ++i) {
+        if(Memoria.at(i) == 0){
+            Memoria.erase (Memoria.begin()+i);
+            cantidadEliminados++;
+            --i;
+        }
+    }
+
+    /*
     for (itr = Memoria.begin() ; itr != Memoria.end(); ++itr){
         if(*itr == 0){
             Memoria.erase(itr);
         }
     }
+     */
 
+    for (int i = 0; i <cantidadEliminados; ++i) {
+        Memoria.emplace_back(0);
+    }
+
+    /*
     while (Memoria.size() < tamaño){
         Memoria.emplace_back(0);
     }
+     */
+
+    cout << "\n\n****************************\n";
+    cout << "Memoria compactada" << endl;
+    for (itr = Memoria.begin();  itr != Memoria.end(); itr++) {
+        if(*itr == 0)
+            cout << "    |";
+        else
+            cout << " T" << *itr<< " |";
+    }
+    cout << "\n****************************\n\n";
 }
 
 bool GestorRam::quitaProceso(int pidProcesoAQuitar) {
@@ -175,5 +209,23 @@ bool GestorRam::yaEstaEnRam(int pidProceso) {
         }
     }
     return enMemoria;
+}
+
+bool GestorRam::tieneHuecos() {
+    bool hayHuecos = false;
+
+    if(!vacia()){
+        if(Memoria.front() == 0){
+            hayHuecos = true;
+        }
+        else{
+            for (int i = 0; i <Memoria.size() ; ++i) {
+                if(Memoria.at(i) == 0 && !hayHuecos && Memoria.at(i++) != 0){
+                    hayHuecos = true;
+                }
+            }
+        }
+    }
+    return hayHuecos;
 }
 
