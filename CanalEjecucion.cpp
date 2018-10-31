@@ -16,10 +16,12 @@ int CanalEjecucion::asignaProceso(list<Proceso> ListaProcesosPendientes, int tie
     if(procesoEnEjecucion.getPid() == 0){
         Proceso procesoVacio;
         procesoEnEjecucion =  procesoVacio;
-        cout << "--- Canal " << id+1 << "---\n";
-        cout << "NO HACE NADA :v (por flojo)\n\n";
+        cout << ">>>>>>>>>> Canal " << id+1 << " <<<<<<<<<<\n";
+        cout << "¡Ejecuta un proceso!\n";
+        cout << "- Obligame prro!! :v\n";
+        cout << "(El canal descansa 77)\n\n";
     } else{
-        cout << "--- Canal " << id+1 << "---\n";
+        cout << ">>>>>>>>>> Canal " << id+1 << " <<<<<<<<<<\n";
         cout << "INGRESA PROCESO\n";
 
         procesoEnEjecucion.imprimeConRam();

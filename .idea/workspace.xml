@@ -13,8 +13,8 @@
   <component name="ChangeListManager">
     <list default="true" id="f5417626-b37c-4894-bcab-379fa47fa88f" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/GestorProcesos.dir/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/GestorProcesos.dir/main.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/GestorProcesos" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/GestorProcesos" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CanalEjecucion.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/CanalEjecucion.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Procesos.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Procesos.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
@@ -34,11 +34,12 @@
       <file leaf-file-name="main.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="603">
-              <caret line="565" column="114" selection-start-line="565" selection-start-column="114" selection-end-line="565" selection-end-column="114" />
+            <state relative-caret-position="1">
+              <caret line="464" column="152" selection-start-line="464" selection-start-column="152" selection-end-line="464" selection-end-column="152" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
                 <element signature="e#203#290#0" expanded="true" />
+                <element signature="e#29178#29465#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -75,11 +76,11 @@
       <file leaf-file-name="CanalEjecucion.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CanalEjecucion.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="455">
-              <caret line="49" column="29" selection-start-line="49" selection-start-column="29" selection-end-line="49" selection-end-column="29" />
+            <state relative-caret-position="41">
+              <caret line="20" column="33" selection-start-line="20" selection-start-column="33" selection-end-line="20" selection-end-column="33" />
               <folding>
-                <element signature="e#90#867#0" expanded="true" />
                 <element signature="e#869#974#0" expanded="true" />
+                <element signature="e#1447#1542#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -132,7 +133,7 @@
         <entry file="file://$PROJECT_DIR$/Procesos.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="761">
-              <caret line="53" lean-forward="true" selection-start-line="53" selection-end-line="53" />
+              <caret line="59" lean-forward="true" selection-start-line="59" selection-end-line="59" />
             </state>
           </provider>
         </entry>
@@ -142,6 +143,9 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>tiempo</find>
+      <find>ram</find>
+      <find>ProcesosRam</find>
+      <find>coutt</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -171,8 +175,8 @@
         <option value="$PROJECT_DIR$/GestorRam.cpp" />
         <option value="$PROJECT_DIR$/CanalEjecucion.h" />
         <option value="$PROJECT_DIR$/CanalEjecucion.cpp" />
-        <option value="$PROJECT_DIR$/main.cpp" />
         <option value="$PROJECT_DIR$/Procesos.txt" />
+        <option value="$PROJECT_DIR$/main.cpp" />
       </list>
     </option>
   </component>
@@ -317,12 +321,12 @@
       <workItem from="1540789000632" duration="8023000" />
       <workItem from="1540800325553" duration="14290000" />
       <workItem from="1540859564751" duration="39477000" />
-      <workItem from="1540948525581" duration="3871000" />
+      <workItem from="1540948525581" duration="7907000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="212329000" />
+    <option name="totallyTimeSpent" value="216365000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -335,7 +339,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49818182" weight="0.16138126" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32969698" />
@@ -343,9 +346,9 @@
       <window_info anchor="bottom" id="CMake" order="10" weight="0.32969698" />
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.5004184" side_tool="true" weight="0.32848486" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.78303033" />
-      <window_info anchor="bottom" x="620" y="45" width="820" height="855" id="Run" order="12" weight="0.6690909" />
+      <window_info anchor="bottom" x="620" y="45" width="820" height="855" id="Run" order="12" weight="1.0" />
       <window_info id="Structure" order="1" sideWeight="0.5018182" side_tool="true" weight="0.16420014" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="1.0" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.6690909" />
       <window_info id="Favorites" order="2" sideWeight="0.50060606" side_tool="true" weight="0.16420014" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.45454547" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -450,6 +453,7 @@
           <folding>
             <element signature="e#0#19#0" expanded="true" />
             <element signature="e#203#290#0" expanded="true" />
+            <element signature="e#29178#29465#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -496,6 +500,7 @@
           <folding>
             <element signature="e#0#19#0" expanded="true" />
             <element signature="e#203#290#0" expanded="true" />
+            <element signature="e#29178#29465#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -741,11 +746,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/CanalEjecucion.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="455">
-          <caret line="49" column="29" selection-start-line="49" selection-start-column="29" selection-end-line="49" selection-end-column="29" />
+        <state relative-caret-position="41">
+          <caret line="20" column="33" selection-start-line="20" selection-start-column="33" selection-end-line="20" selection-end-column="33" />
           <folding>
-            <element signature="e#90#867#0" expanded="true" />
             <element signature="e#869#974#0" expanded="true" />
+            <element signature="e#1447#1542#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -753,17 +758,18 @@
     <entry file="file://$PROJECT_DIR$/Procesos.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="761">
-          <caret line="53" lean-forward="true" selection-start-line="53" selection-end-line="53" />
+          <caret line="59" lean-forward="true" selection-start-line="59" selection-end-line="59" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="603">
-          <caret line="565" column="114" selection-start-line="565" selection-start-column="114" selection-end-line="565" selection-end-column="114" />
+        <state relative-caret-position="1">
+          <caret line="464" column="152" selection-start-line="464" selection-start-column="152" selection-end-line="464" selection-end-column="152" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
             <element signature="e#203#290#0" expanded="true" />
+            <element signature="e#29178#29465#0" expanded="true" />
           </folding>
         </state>
       </provider>
