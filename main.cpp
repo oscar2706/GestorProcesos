@@ -370,17 +370,24 @@ void ejecutaMultitarea(){
 
                                     if(itrCanal->regresaProceso().finalizo()){
                                         procesosTerminados++;
-                                        int tiempoEjecucion = itrCanal->regresaProceso().getTiempoEjecucion();
-                                        int tiempoLlegada = itrCanal->regresaProceso().getTiempoLlegada();
-                                        int tiempoEspera = pasoProcesamiento - tiempoEjecucion - tiempoLlegada;
-
-                                        itrCanal->regresaProceso().setTiempoEspera(tiempoEspera);
-                                        cout << "\t-----> ¡T"<< itrCanal->regresaProceso().getPid() << " SE MURIO! D: <-----" << endl << endl;
-
-                                        ProcesosFinalizados.push_back(itrCanal->regresaProceso());
+                                        Proceso procesoFinalizado;
+                                        for (itrProceso = ListaProcesos.begin(); itrProceso != ListaProcesos.end(); itrProceso++)  {
+                                            if(itrCanal->regresaProceso().getPid() == itrProceso->getPid()){
+                                                procesoFinalizado = *itrProceso;
+                                                break;
+                                            }
+                                        }
+                                        int tiempoEjecucion = procesoFinalizado.getTiempoEjecucion();
+                                        int tiempoLlegada = procesoFinalizado.getTiempoLlegada();
+                                        int pasoFinalizo = pasoProcesamiento+1;
+                                        int tiempoEspera = pasoFinalizo - tiempoEjecucion - tiempoLlegada;
+                                        procesoFinalizado.setTiempoEspera(tiempoEspera);
+                                        cout << "\t-----> ¡T"<< procesoFinalizado.getPid() << " SE MURIO! D: <-----" << endl;
+                                        procesoFinalizado.imprimeCompleto();
+                                        cout << pasoFinalizo << " - " << tiempoEjecucion << " - " << tiempoLlegada << " = "<< tiempoEspera << endl;
+                                        cout << "tiempo de espera = " << procesoFinalizado.getTiempoEspera() << endl << endl;
+                                        ProcesosFinalizados.push_back(procesoFinalizado);
                                         ++cantidadProcesosFinalizados;
-                                        itrCanal->liberaCanal();
-                                        //ProcesosPendientes.pop_front();
                                         tiempoEsperaTotal += tiempoEspera;
                                     }
 
@@ -454,13 +461,10 @@ void ejecutaMultitarea(){
 
                                             bool enListaEjecutandose = false;
 
-                                     //AQUI
-                                            if(pasoProcesamiento == 4 && itrCanal->regresaProceso().getPid()==3){
-
-                                            }
-
                                             for (itrProceso = ProcesosEjecutandose.begin(); itrProceso != ProcesosEjecutandose.end(); itrProceso++){
+
                                                 if(itrProceso->getPid() == itrCanal->regresaProceso().getPid()){
+
                                                     itrCanal->liberaCanal();
                                                     itrCanal->asignaProceso(*itrProceso);
                                                     itrCanal->ejecutaProcesoSinLiberar();
@@ -468,19 +472,30 @@ void ejecutaMultitarea(){
                                                     enListaEjecutandose = true;
 
                                                     if(itrCanal->regresaProceso().finalizo()){
+
+                                                        Proceso procesoFinalizado;
+
+                                                        for (itrProceso = ListaProcesos.begin(); itrProceso != ListaProcesos.end(); itrProceso++)  {
+                                                            if(itrCanal->regresaProceso().getPid() == itrProceso->getPid()){
+                                                                itrCanal->asignaProceso(*itrProceso);
+                                                                procesoFinalizado = *itrProceso;
+                                                                break;
+                                                            }
+                                                        }
                                                         ProcesosQueNoCaben.clear();
                                                         procesosTerminados++;
                                                         int tiempoEjecucion = itrCanal->regresaProceso().getTiempoEjecucion();
                                                         int tiempoLlegada = itrCanal->regresaProceso().getTiempoLlegada();
-                                                        int tiempoEspera = pasoProcesamiento - tiempoEjecucion - tiempoLlegada;
+                                                        int pasoFinalizo = pasoProcesamiento+1;
+                                                        int tiempoEspera = pasoFinalizo - tiempoEjecucion - tiempoLlegada;
+                                                        procesoFinalizado.setTiempoEspera(tiempoEspera);
 
-                                                        itrCanal->regresaProceso().setTiempoEspera(tiempoEspera);
-                                                        cout << "\t-----> ¡T"<< itrCanal->regresaProceso().getPid() << " SE MURIO! D: <-----" << endl << endl;
-
-                                                        ProcesosFinalizados.push_back(itrCanal->regresaProceso());
+                                                        cout << "\t-----> ¡T"<< itrCanal->regresaProceso().getPid() << " SE MURIO! D: <-----" << endl;
+                                                        procesoFinalizado.imprimeCompleto();
+                                                        cout << pasoProcesamiento+1 << " - " << tiempoEjecucion << " - " << tiempoLlegada << "= " << tiempoEspera<< endl;
+                                                        cout << "tiempo de espera = " << procesoFinalizado.getTiempoEspera() << endl << endl;
+                                                        ProcesosFinalizados.push_back(procesoFinalizado);
                                                         ++cantidadProcesosFinalizados;
-                                                        itrCanal->liberaCanal();
-                                                        //ProcesosPendientes.pop_front();
                                                         tiempoEsperaTotal += tiempoEspera;
                                                     }
 
@@ -542,13 +557,13 @@ void ejecutaMultitarea(){
                     pasoProcesamiento++;
                 }
 
-                /*
                 cout << "\n\n*********************************************"<< endl;
-                for (itrProceso = ProcesosFinalizados.begin(); itrProceso != ProcesosFinalizados.end(); itrProceso++)
+                for (itrProceso = ProcesosFinalizados.begin(); itrProceso != ProcesosFinalizados.end(); itrProceso++){
                     itrProceso->imprimeCompleto();
+                }
                 cout << "*********************************************\n\n";
-                 */
-
+                cout << "Tiempo de espera total = "  << tiempoEsperaTotal << "\n";
+                cout << "Tiempo de espera promedio = "  << tiempoEsperaTotal/ProcesosFinalizados.size() << "\n\n";
             }break;
 
             default:
